@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue_dark_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="?actionBarSize"
+        >
+
+        <!--        TopAppBar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_user_photo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_oval_white_background_black_border"
+                android:contentDescription="@string/img" />
+
+            <LinearLayout
+                android:id="@+id/btn_call_mpo"
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/white_light_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="User Name" />
+
+                <TextView
+                    android:id="@+id/tv_user_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    tools:text="Bashundhara R/A, Dhaka 1212" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btn_drawer"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:contentDescription="@string/btn"
+                android:padding="20dp"
+                android:src="@mipmap/ic_menu"
+                app:tint="@color/white_light_gray" />
+
+
+        </LinearLayout>
+
+        <!--Body-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/home_page_background"
+            android:orientation="vertical">
+
+
+            <SearchView
+                android:id="@+id/sv_product"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="18dp"
+                android:iconifiedByDefault="false"
+                app:queryBackground="@null"
+                android:padding="3.5dp"
+                android:queryHint="Search"
+                android:background="@drawable/curved_border_white"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_departments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_department_card" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/dark_blue_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/departments" />
+
+                <TextView
+                    android:id="@+id/btn_see_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/dark_blue_white"
+                    android:textSize="16sp"
+                    android:text="See more >>" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn__general_med"
+                    android:layout_width="0dp"
+                    android:layout_weight=".1"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_marginTop="12dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/ic_appoinment" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="General Medicine"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_cardiology"
+                    android:layout_width="0dp"
+                    android:layout_weight=".1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_marginTop="12dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/ic_heart" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Cardiology"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_gynecology"
+                    android:layout_width="0dp"
+                    android:layout_weight=".1"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_marginTop="12dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/ic_gyne" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Gynecology"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/btn_test"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="38dp"-->
+            <!--                android:layout_margin="5dp"-->
+            <!--                android:background="@drawable/curved_border_blue600"-->
+            <!--                android:fontFamily="@font/amarante"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="General Doctor"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="23sp"-->
+            <!--                android:textStyle="bold" />-->
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="25dp">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_suggestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ViewFlipper
+                        android:id="@+id/vf_suggestion"
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent"
+                        android:flipInterval="2000"
+                        android:autoStart="true"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_out_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintVertical_bias="0.5"
+                        >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/img_suggesion"/>
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/img_help1"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/img_help2"/>
+
+                    </ViewFlipper>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:layout_marginStart="19dp"
+                    android:textColor="@color/dark_blue_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="My Doctors" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@mipmap/img_doc2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dr.Akbor"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"/>
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@mipmap/img_doc3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Shilpi"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@mipmap/img_doctor" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dr.Rayhana"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Bottom App Bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blue_dark_blue"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btn_departments"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight=".1"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/btn_delete_issue"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:src="@mipmap/stethoscope"
+                app:tint="@color/white"
+                android:visibility="visible"
+                android:contentDescription="@string/btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-8dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Departments"
+                tools:ignore="TooManyViews" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            />
+
+        <LinearLayout
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight=".1"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:src="@mipmap/ic_home1"
+                app:tint="@color/blue_900"
+                android:visibility="visible"
+                android:contentDescription="@string/btn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-8dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_900"
+                android:text="Home" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--Add Button-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"/>
+
+        <LinearLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/bottom_appbar_circle"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_create"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:contentDescription="@string/btn"
+                android:src="@mipmap/ic_plus_small"
+                app:tint="@color/jist_lighter_blue" />
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
